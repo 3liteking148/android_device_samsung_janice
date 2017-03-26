@@ -1,0 +1,13 @@
+diff --git a/reference-ril/Android.mk b/reference-ril/Android.mk
+index 551ae65..fc67ab8 100644
+--- a/reference-ril/Android.mk
++++ b/reference-ril/Android.mk
+@@ -39,7 +39,7 @@ ifeq (foo,foo)
+       libcutils libutils
+   LOCAL_CFLAGS += -DRIL_SHLIB
+   LOCAL_MODULE:= libreference-ril
+-  include $(BUILD_SHARED_LIBRARY)
++  #include $(BUILD_SHARED_LIBRARY)
+ else
+   #build executable
+   LOCAL_SHARED_LIBRARIES += \
