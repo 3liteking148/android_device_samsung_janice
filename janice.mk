@@ -1,5 +1,5 @@
 # Include common makefile
-$(call inherit-product, device/samsung/u8500-common/u8500.mk)
+$(call inherit-product, device/samsung/golden/common.mk)
 
 LOCAL_PATH := device/samsung/janice
 
@@ -31,7 +31,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/device_tunables.rc:root/device_tunables.rc \
     $(LOCAL_PATH)/rootdir/init.samsungjanice.rc:root/init.samsungjanice.rc \
     $(LOCAL_PATH)/rootdir/init.recovery.samsungjanice.rc:root/init.recovery.samsungjanice.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc
+    $(LOCAL_PATH)/rootdir/ueventd.samsungjanice.rc:root/ueventd.samsungjanice.rc \
+    $(LOCAL_PATH)/rootdir/init.u8500.rc:root/init.u8500.rc \
+    $(LOCAL_PATH)/rootdir/init.u8500.usb.rc:root/init.u8500.usb.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
