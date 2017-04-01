@@ -1,6 +1,9 @@
 # Include common makefile
 $(call inherit-product, device/samsung/golden/common.mk)
 
+# And the opensource libs
+$(call inherit-product, device/samsung/golden/opensource/Android.mk)
+
 LOCAL_PATH := device/samsung/janice
 
 # Overlay		
