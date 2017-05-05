@@ -1,31 +1,11 @@
 # Include common makefile
 $(call inherit-product, device/samsung/golden/common.mk)
 
-# And the opensource libs
-$(call inherit-product, device/samsung/golden/opensource/Android.mk)
-
 LOCAL_PATH := device/samsung/janice
-
-# Overlay		
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
 
 # F2FS
 PRODUCT_PACKAGES += \
     genfstab
-
-# STE
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/ste_modem.sh:system/etc/ste_modem.sh
-
-# GPS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
-
-# Compass workaround
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/compass:system/etc/init.d/compass
 
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
@@ -42,10 +22,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml
-
-# Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/adm.sqlite-u8500:system/etc/adm.sqlite-u8500
 
 # Use non-open-source parts if present
 $(call inherit-product-if-exists, vendor/samsung/u8500/janice/janice-vendor-blobs.mk)
