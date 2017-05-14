@@ -1,0 +1,8 @@
+Make sure the source is patched
+
+. build/envsetup.sh
+lunch cm_janice-eng
+** copy ramdisk-recovery.cpio to out/target/product/janice (non-booting recovery workaround) **
+mka bootimage
+
+Then copy files to golden device tree
